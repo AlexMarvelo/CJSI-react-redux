@@ -5,8 +5,8 @@ export const actionTypes = {
   loadPokemons: 'LOAD_POKEMONS',
   requestPokemons: 'REQUEST_POKEMONS',
   receivePokemons: 'RECEIVE_POKEMONS',
-  showDetailed: 'SHOW_DETAILED',
-  updatePokemons: 'UPDATE_POKEMONS'
+  addToFavourites: 'ADD_TO_FAVOURITES',
+  removeFromFavourites: 'REMOVE_FROM_FAVOURITES',
 }
 
 export const requestPokemons = () => {
@@ -57,9 +57,16 @@ export const loadPokemons = () => {
   }
 }
 
-export const showDetailed = (id) => {
+export const addToFavourites = (id) => {
   return {
-    type: actionTypes.showDetailed,
-    pokemonId: id
+    type: actionTypes.addToFavourites,
+    pokemonIndex: id
+  }
+}
+
+export const removeFromFavourites = (id) => {
+  return {
+    type: actionTypes.removeFromFavourites,
+    pokemonIndex: id
   }
 }

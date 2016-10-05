@@ -16,16 +16,9 @@ const App = () => (
       <Header title={'Pokemon Legends'} />
       <main>
         <div className="container">
-          <div className="row">
-            <section id="bigCard__container" className="col-md-4 col-md-push-8">
-
-            </section>
-            <section className="col-md-8 col-md-pull-4">
-              <Filter />
-              <SmallCardList />
-              <LoadMore />
-            </section>
-          </div>
+          <Filter />
+          <SmallCardList />
+          <LoadMore />
         </div>
       </main>
     </div>

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
-import { showDetailed } from '../actions/actions'
+import { addToFavourites, removeFromFavourites } from '../actions/actions'
 import SmallCardList from '../components/SmallCardList'
+import { store } from '../index'
 
 const mapStateToProps = (state) => {
   return {
@@ -10,8 +11,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onCardClick: (id) => {
-      dispatch(showDetailed(id))
+    onFavBtnClick: (index) => {
+      if (store.getState().pokemons[index].favourite) {
+        dispatch(removeFromFavourites(index))
+      } else {
+        dispatch(addToFavourites(index))
+      }
     }
   }
 }

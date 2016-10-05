@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react'
 import SmallCard from './SmallCard'
 
-const SmallCardList = ({pokemons, onCardClick}) => {
-  const cards = pokemons.map(pokemon =>
+const SmallCardList = ({pokemons, onFavBtnClick}) => {
+  const cards = pokemons.map((pokemon, index) =>
     <SmallCard
       pokemon={pokemon}
-      onCardClick={() => onCardClick(pokemon.pkdx_id)}
+      onFavBtnClick={() => onFavBtnClick(index)}
       key={pokemon.pkdx_id}
     />
   );
@@ -18,7 +18,7 @@ const SmallCardList = ({pokemons, onCardClick}) => {
 
 SmallCardList.propTypes = {
   pokemons: PropTypes.array.isRequired,
-  onCardClick: PropTypes.func.isRequired
+  onFavBtnClick: PropTypes.func.isRequired
 }
 
 export default SmallCardList;
