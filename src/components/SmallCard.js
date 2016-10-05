@@ -7,7 +7,7 @@ const SmallCard = ({pokemon, onFavBtnClick}) => {
     <li className="card__lable" key={index}>{type.name[0].toUpperCase() + type.name.slice(1)}</li>
   );
   return (
-    <li className="col-sm-3">
+    <li className="col-lg-3 col-sm-4">
       <div className={pokemon.favourite ?
           'card card_small card_favourite' :
           'card card_small'
