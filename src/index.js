@@ -1,11 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+import createLogger from 'redux-logger'
 import pokemonsApp from './reducers/reducers'
 import App from './components/App'
+import { loadPokemons } from './actions/actions'
 
-let store = createStore(pokemonsApp)
+const loggerMiddleware = createLogger();
+
+export const store = createStore(
+  pokemonsApp,
+  applyMiddleware(
+    thunkMiddleware, // lets us dispatch() functions
+    loggerMiddleware // neat middleware that logs actions
+  )
+)
 
 ReactDOM.render(
   <Provider store={store}>
@@ -13,3 +24,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 )
+
+store.dispatch(loadPokemons());

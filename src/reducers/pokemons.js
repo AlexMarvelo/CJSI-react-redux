@@ -1,10 +1,20 @@
-export default function (state = {}, action) {
+import config from '../config'
+import { actionTypes } from '../actions/actions'
+
+const defaultPokemonList = [];
+
+export default function (pokemons = defaultPokemonList, action) {
   switch (action.type) {
-    case 'LOAD_POCKEMONS':
-      console.log('loading pockemons');
-      return state;
+    case actionTypes.requestPokemons:
+      return pokemons;
+
+    case actionTypes.receivePokemons:
+      return pokemons.concat(action.data.objects);
+
+    case actionTypes.showDetailed:
+      return pokemons;
 
     default:
-      return state
+      return pokemons
   }
 }
