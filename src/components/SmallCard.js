@@ -27,8 +27,11 @@ const SmallCard = ({pokemon, onFavBtnClick}) => {
         <button
           className={pokemon.favourite ? 'button__addFav button__addFav_active' : 'button__addFav'}
           onClick={onFavBtnClick}>
-          {pokemon.favourite ? 'Remove to Favourites ' : 'Add from Favourites '}
-          <span className="glyphicon glyphicon-thumbs-up"></span>
+          {pokemon.favourite ? 'Remove from Favourites ' : 'Add to Favourites '}
+          <span className={pokemon.favourite ?
+              '' :
+              'glyphicon glyphicon-thumbs-up'
+          }></span>
         </button>
       </div>
     </li>
