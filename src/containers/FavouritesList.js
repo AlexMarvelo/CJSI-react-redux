@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
 import { addToFavourites, removeFromFavourites } from '../actions/actions'
-import { getPokemonById } from '../utils/functions'
-import SmallCardList from '../components/SmallCardList'
+import { getPokemonById, getFavourites } from '../utils/functions'
+import FavouritesList from '../components/FavouritesList'
 
 const mapStateToProps = (state) => {
   return {
-    pokemons: state.pokemons
+    pokemons: getFavourites()
   }
 }
 
@@ -22,9 +22,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const SmallCardListCtrl = connect(
+const FavouritesListCtrl = connect(
   mapStateToProps,
   mapDispatchToProps
-)(SmallCardList)
+)(FavouritesList)
 
-export default SmallCardListCtrl
+export default FavouritesListCtrl

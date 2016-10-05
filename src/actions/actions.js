@@ -60,13 +60,13 @@ export const loadPokemons = () => {
 export const addToFavourites = (id) => {
   return {
     type: actionTypes.addToFavourites,
-    pokemonIndex: id
+    pokemonId: id
   }
 }
 
 export const removeFromFavourites = (id) => {
   return {
     type: actionTypes.removeFromFavourites,
-    pokemonIndex: id
+    pokemonId: id
   }
 }

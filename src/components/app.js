@@ -1,28 +1,26 @@
 import React from 'react'
+import { Router, Route, browserHistory, IndexRedirect } from 'react-router'
 
 require('../../node_modules/bootstrap/dist/css/bootstrap.css')
 require('../../assets/styles/style.css')
 
 import Header from './Header'
-import Filter from './Filter'
-import SmallCardList from '../containers/SmallCardList'
-import LoadMore from '../containers/LoadMore'
+import Homepage from './Homepage'
 
-const App = () => (
-  <div>
-    <div className="background"></div>
-    <div className="preloader"></div>
-    <div className="page customScrollBlock">
-      <Header title={'Pokemon Legends'} />
-      <main>
-        <div className="container">
-          <Filter />
-          <SmallCardList />
-          <LoadMore />
+const App = React.createClass({
+  render() {
+    return (
+      <div>
+        <div className="background"></div>
+        <div className="page">
+          <Header title={'Pokemon Legends'} />
+          <main>
+            {this.props.children}
+          </main>
         </div>
-      </main>
-    </div>
-  </div>
-)
+      </div>
+    )
+  }
+})
 
 export default App
