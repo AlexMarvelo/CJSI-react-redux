@@ -9,7 +9,5 @@ export function getPokemonById(id) {
 }
 
 export function getFavourites() {
-  return store.getState().pokemons.map(pokemon => {
-    if (pokemon.favourite) return pokemon;
-  })
+  return store.getState().pokemons.filter(pokemon => pokemon.favourite)
 }
