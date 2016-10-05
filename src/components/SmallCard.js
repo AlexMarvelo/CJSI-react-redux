@@ -14,7 +14,7 @@ const SmallCard = ({pokemon, onFavBtnClick}) => {
         }>
         <div className="card__imgCont">
           <img
-            src={`${config.url}media/img/${pokemon.pkdx_id}.png`}
+            src={`${config.imgSource}${pokemon.pkdx_id}.png`}
             className="card__img"
             alt={name}/>
         </div>
