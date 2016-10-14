@@ -19,4 +19,4 @@ npm i
 npm start
 ```
 
-![Aplication Screenshot](heyalex.xyz/static/img/screenshot-react-redux.png)
+![Aplication Screenshot](http://heyalex.xyz/static/img/screenshot-react-redux.png)
