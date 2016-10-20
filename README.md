@@ -1,5 +1,6 @@
 # CJSI-react-redux
 Hometask for Ciklum JS Internship Lesson 8
+This aplication fetch data about pokemons using [RESTful pokemon API](http://pokeapi.co/) and represents it on page. User can add and remove different pokemons from favourites
 
 ---
 
@@ -15,7 +16,7 @@ Hometask for Ciklum JS Internship Lesson 8
 git clone https://github.com/AlexMarvelo/CJSI-react-redux.git
 cd CJSI-react-redux
 npm i
-npm run start
+npm start
 ```
 
-![Hello from pokemons](http://vignette1.wikia.nocookie.net/es.pokemon/images/2/2b/Pok%C3%A9mon_iniciales_de_Kanto.png/revision/latest?cb=20130216014742)
+![Aplication Screenshot](http://heyalex.xyz/static/img/screenshot-react-redux.png)
